@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+.hero {
+    position: relative;
+    background-image: url('../images/eventone.jpg');
+    margin-top: -153px;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+  }
+  .logo {
+
+    width: 100px;
+    cursor: pointer;
+    left: 20px;
+  
+  }
+
+
+  /* -------------Navigation Bar------------ */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(65, 110, 120, 0.815);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    padding: 0%;
+  }
+  
+  .nav-close-button {
+    display: none;
+  }
+  
+  .nav-open-button {
+    display: none;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar li {
+    float: left;
+  }
+  
+  .navbar a {
+    display: block;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: rgb(220, 210, 210);
+  }
+  
+  .navbar:hover {
+    background-color: rgba(202, 197, 197, 0.907);
+  }
+  
+  .navbar a.active {
+    color: rgb(0, 0, 0);
+  
+  }
+  
+  /* dropdown button */
+  .dropdown .dropbtn {
+    display: block;
+    padding: 20px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /*  dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(202, 197, 197, 0.907);
+    min-width: 160px;
+    z-index: 1;
+  }
+  
+  /* dropdown links */
+  .dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* color of dropdown links when hover */
+  .dropdown-content a:hover {
+    background-color: rgba(202, 197, 197, 0.907);
+  }
+  
+  /* dropdown content when hovering over the dropdown button */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* active link in the dropdown */
+  .dropdown-content a.active {
+    color: rgb(0, 0, 0);
+  }
+  
+  .booking-button {
+    display: inline-block;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    text-decoration: none;
+    padding: none;
+    border-radius: 0px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    /
+  }
+  
+  .booking-button:hover {
+    background-color: rgb(80, 80, 80);
+  }
+
+  /* --------X----Navigation Bar-----X------*/
+
+
+
+   /* -------------Footer------------*/
+   footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+  
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 2400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  
+  .column {
+    flex-basis: calc(33.33% - 20px);
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .social-media {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-media li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .social-media a img {
+    width: 48px;
+    height: 48px;
+    border: none;
+  }
+
+   /* -------X-----Footer------X-----*/
+
+
+
+
+   .intro {
+    font-family: 'Times New Roman', Times, serif, Times, serif;
+    margin: 0;
+    padding: 20px 0;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+  }
+  
+  .intro h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .intro p {
+    font-size: 1em;
+    margin-top: 10px;
+  }
+
+  /* content styles*/
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.section {
+  flex-basis: 45%;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+.section img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* alignment  sections */
+.content-container:nth-child(even) .section:nth-child(1),
+.content-container:nth-child(odd) .section:nth-child(2) {
+  order: 2;
+}
+
+.content-container:nth-child(even) .section:nth-child(2),
+.content-container:nth-child(odd) .section:nth-child(1) {
+  order: 1;
+}
+
+  
+  /* Fade in animation */
+  @keyframes fadeIn{
+    from {
+      opacity: 0; 
+  }
+  to {
+      opacity: 1; 
+  }
+
+  }
+
+   /* ------------------------------------------media qaury for mobile-------------------------------------- */
+   @media (max-width:768px) {
+    .navbar {
+      width: 100%;
+      padding: 10px;
+      background-color: rgb(65, 110, 120);
+      flex-direction: row;
+  
+    }
+  
+    .navbar ul {
+      display: none;
+      flex-direction: column;
+    }
+    
+    .navbar ul li {
+      background-color: rgba(0, 153, 255, 0.389);
+    }
+  
+    .navbar:hover {
+      background-color: rgb(65, 110, 120);
+    }
+  
+    .dropdown-content {
+      width: 100%;
+    }
+  
+    .dropdown {
+      background-color: orange;
+    }
+  
+    .booking-button {
+      display: none;
+    }
+  
+    .nav-close-button {
+      position: absolute;
+      z-index: 2000;
+      width: 35px;
+      height: 35px;
+      color: white;
+      font-size: 35px;
+      right: 0;
+      top: 0;
+      cursor: pointer;
+    }
+  
+    .nav-open-button {
+      display: block;
+      rotate: 90deg;
+      z-index: 2000;
+      width: 35px;
+      height: 35px;
+      color: white;
+      font-size: 35px;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 768px) and (min-width: 300px) {
+    .content-container {
+      flex-direction: column; 
+      align-items: center; 
+    }
+  
+    .section {
+      flex-basis: 100%; 
+      margin: 10px 0;
+      padding: 10px; 
+    }
+  }
+  
+  
+  /* -----------------X-------------------------media qaury for mobile-------------X------------------------- */

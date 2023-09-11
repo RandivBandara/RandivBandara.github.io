@@ -1,0 +1,734 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;  
+}
+
+
+.content-container {
+  padding: 0 5%;
+
+
+}
+
+.hero {
+  position: relative;
+  background-image: url('../images/main.jpg');
+  margin-top: -153px;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+}
+
+.logo {
+
+  width: 100px;
+  cursor: pointer;
+  left: 20px;
+
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(65, 110, 120, 0.815);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s;
+  padding: 0%;
+}
+
+.nav-close-button {
+  display: none;
+}
+
+.nav-open-button {
+  display: none;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar a {
+  display: block;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+  color: rgb(220, 210, 210);
+}
+
+.navbar:hover {
+  background-color: rgba(202, 197, 197, 0.907);
+}
+
+.navbar a.active {
+  color: rgb(0, 0, 0);
+
+}
+
+/* dropdown button */
+.dropdown .dropbtn {
+  display: block;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/*  dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(202, 197, 197, 0.907);
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* dropdown links */
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+/* color of dropdown links when hover */
+.dropdown-content a:hover {
+  background-color: rgba(202, 197, 197, 0.907);
+}
+
+/* dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* active link in the dropdown */
+.dropdown-content a.active {
+  color: rgb(0, 0, 0);
+}
+
+.booking-button {
+  display: inline-block;
+  background-color: rgb(60, 60, 60);
+  color: white;
+  text-decoration: none;
+  padding: none;
+  border-radius: 0px;
+  /* Makes the button round */
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  /
+}
+
+.booking-button:hover {
+  background-color: rgb(80, 80, 80);
+}
+
+.news-card-text-container {
+  z-index: 100;
+}
+
+.overflow-effect {
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(10deg , rgba(0, 0, 0, 0.696), rgba(0, 0, 0, 0.329), rgba(0, 0, 0, 0));
+  width: 100%;
+  height: 300px;
+  position: absolute;
+}
+
+.intro {
+  font-family: 'Times New Roman', Times, serif, Times, serif;
+  margin: 0;
+  padding: 20px 0;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* -----------------X-------Commom Styles-----------------X----------------- */
+
+
+/* --------------------------Home Page---------------------------- */
+.news-container {
+  /* overflow-y:auto; */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  justify-content: center;
+  width: 100%;
+  min-height: 50vh;
+
+}
+
+
+.news-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.675);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  color: #aeadad;
+  transition: 400ms;
+  position: relative;
+}
+.news-card:nth-child(1) {
+  background-image: url('../images/article1.jpg');
+}
+
+.news-card:nth-child(2) {
+  background-image: url('../images/Resotwo.png'); 
+}
+
+.news-card:nth-child(3) {
+  background-image: url('../images/main.jpg');
+}
+
+.news-card:nth-child(4) {
+  background-image: url('../images/Hiking.JPG'); 
+}
+
+
+
+
+.news-card:hover {
+  transition: 400ms;
+  transform: scale(105%);
+
+}
+
+.news-card img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.news-card h2 {
+  color: #ffffff;
+  margin: 20px 0 10px;
+
+}
+
+.news-card p {
+  color: rgb(217, 217, 217);
+  margin-bottom: 10px;
+}
+
+/* ------------X--------------Home Page--------------X-------------- */
+
+
+.adventure-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+/* -----------------------------Booking--------------------------------- */
+
+/* Center align the page content */
+.booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* booking forms */
+.booking-form {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.booking-form select,
+.booking-form input[type="number"],
+.booking-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-form button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #0056b3;
+}
+
+/* -----------------X-----------Booking-------------------X------------- */
+
+/* ------------------------Branch Page-----------------------------------*/
+
+/* Center align the page content */
+.branch-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+}
+
+/*branch sections */
+.branch {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.branch h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.branch .map {
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.branch img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.branch p {
+  font-size: 1.1em;
+  color: #666;
+  
+}
+
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+/* table headings */
+th {
+  font-weight: bold;
+  background-color: #ddd;
+}
+
+/* --------------X---------Branch Page---------------X-------------------*/
+
+
+
+/*------------------------ Adventure Page--------------------------------*/
+.adventure-container {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.adventure-container .image-container,
+.adventure-container .description-container {
+  flex: 1;
+  padding: 20px;
+
+}
+
+.adventure-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.adventure-container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.adventure-container a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+
+}
+
+.adventure-container a:hover {
+  background-color: #0056b3;
+}
+
+
+/*---------------X--------- Adventure Page-----------------X---------------*/
+
+/* -----------------------------Restaurant page-------------------------------------- */
+
+/* restaurant sections */
+.restaurant {
+  margin: 20px;
+  padding: 40px 100px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  min-width: 300px;
+  
+}
+
+.restaurant:hover {
+  transform: scale(1.05);
+}
+
+/*restaurant images */
+.restaurant img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* headings*/
+.restaurant h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #333;
+}
+
+/* restaurant descriptions */
+.restaurant p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* Cuisine Available section */
+.restaurant p strong {
+  color: #007bff;
+}
+
+
+/* menu links */
+.restaurant a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+}
+
+/* hover color */
+.restaurant a:hover {
+  background-color: #0056b3;
+}
+
+/* event sections */
+.events-corporate,
+.events-weddings {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  max-width: 500px;
+  margin: 20px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* Background images */
+.events-corporate {
+  background-image: url(../images/eventone.jpg);
+}
+
+.events-weddings {
+  background-image: url(../images/eventtwo.jpg)
+}
+
+/*zoom effect on hover */
+.events-corporate:hover,
+.events-weddings:hover {
+  transform: scale(1.05);
+}
+
+/*event headings */
+.events-corporate h2,
+.events-weddings h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/*events descriptions */
+.events-corporate p,
+.events-weddings p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Learn More links */
+.events-corporate a,
+.events-weddings a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+/* hover color */
+.events-corporate a:hover,
+.events-weddings a:hover {
+  background-color: #0056b3;/
+}
+
+/* ----------------x-------------Restaurant page---------------------x----------------- */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+
+  width: 100%;
+}
+
+.container {
+  max-width: 2400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.column {
+  flex-basis: calc(33.33% - 20px);
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media {
+  list-style: none;
+  padding: 0;
+}
+
+.social-media li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.social-media a img {
+  width: 48px;
+  height: 48px;
+  border: none;
+}
+
+@media (min-width:1440px) {
+  .content-container {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+/* ------------------------------------------media qaury for mobile-------------------------------------- */
+@media (max-width:768px) {
+  .navbar {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(65, 110, 120);
+    flex-direction: row;
+
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+  }
+  
+  .navbar ul li {
+    background-color: rgba(0, 153, 255, 0.389);
+  }
+
+  .navbar:hover {
+    background-color: rgb(65, 110, 120);
+  }
+
+  .dropdown-content {
+    width: 100%;
+  }
+
+  .dropdown {
+    background-color: orange;
+  }
+
+  .booking-button {
+    display: none;
+  }
+
+  .nav-close-button {
+    position: absolute;
+    z-index: 2000;
+    width: 35px;
+    height: 35px;
+    color: white;
+    font-size: 35px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .nav-open-button {
+    display: block;
+    rotate: 90deg;
+    z-index: 2000;
+    width: 35px;
+    height: 35px;
+    color: white;
+    font-size: 35px;
+    right: 0;
+    cursor: pointer;
+  }
+}
+
+/* adventure page */
+@media (max-width: 768px) and (min-width: 300px) {
+  .adventure-container {
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: center; 
+    margin: 10px; 
+    padding: 10px; 
+  }
+
+  .adventure-container h2 {
+    font-size: 20px; 
+  }
+
+  .adventure-container p {
+    font-size: 14px; 
+    margin-bottom: 10px; 
+  }
+}
+
+
+
+/* -----------------X-------------------------media qaury for mobile-------------X------------------------- */

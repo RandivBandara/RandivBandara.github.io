@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>branches</title>
+  <link rel="stylesheet" href="assests/css/global.css" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+  <nav class="navbar" id="navbar">
+    <div>
+      <a href="index.html"><img src="assests/images/logo.png" class="logo" alt="hotel" /></a>
+    </div>
+    <ul id="navigationUl">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="branches.html" class="active">Branches</a></li>
+      <li class="dropdown">
+        <a href="restaurants.html" class="dropbtn">Restaurants</a>
+        <div class="dropdown-content">
+          <a href="eventOne.html">Events-corporate</a>
+          <a href="eventTwo.html">Events-weddings</a>
+        </div>
+      </li>
+      <li><a href="adventures.html">Adventures</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+    <div id="bookingButton" class="booking-button">
+      <a href="booking.html">Booking</a>
+    </div>
+    <div id="navCloseButton" class="nav-close-button" onclick="closeNavbar();">
+      X
+    </div>
+    <div id="navOpenButton" class="nav-open-button" onclick="openNavbar();">
+      |||
+    </div>
+  </nav>
+
+  <div class="hero"></div>
+
+  <div class="branch-container">
+    <h1>Mountain Peak Hotel Branches</h1>
+
+
+    <section class="branch">
+      <h2>Mountain Peak Retreat</h2>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15840.286273920994!2d80.76303356427216!3d7.000854385806451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3802ac4e14a3b%3A0x2e692126d447a56f!2sPidurutalagala!5e0!3m2!1sen!2slk!4v1694337990112!5m2!1sen!2slk"
+          width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <img src="assests/images/branch1.jpg" width="600"  alt="Branch 1 Image">
+      <p>
+        Explore the charm of our first branch, nestled amidst the serene landscapes of the Piduruthalagala. With
+        luxurious accommodations and breathtaking views, it's an ideal getaway for nature enthusiasts.
+      </p>
+    </section>
+
+    <section class="branch">
+      <h2>Mountain Peak Lodge</h2>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15824.825179101505!2d80.7706611642943!3d7.442413158109461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae35f659beee899%3A0x3bf7cc23068a888d!2sKnuckles!5e0!3m2!1sen!2slk!4v1694338819221!5m2!1sen!2slk"
+          width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <img src="assests/images/branch2.jpg" alt="Branch 2 Image">
+      <p>
+        Immerse yourself in the tranquility of our second branch, located by the serene Knuckles. Experience the
+        epitome of luxury and relaxation with world-class amenities and personalized service.
+      </p>
+    </section>
+
+    <section class="branch">
+      <h2>Mountain Inn</h2>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7911.122637488853!2d80.61151014542688!3d7.5135810567411205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae34ff687c97d91%3A0x34bd0af680431fc5!2sKirigalpotta!5e0!3m2!1sen!2slk!4v1694339305744!5m2!1sen!2slk"
+          width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <img src="assests/images/branch3.jpg" alt="Branch 3 Image">
+      <p>
+        Embrace the beauty of our third branch, perched atop a mountain with panoramic views of the valley. It's a haven
+        for adventure seekers and those seeking a peaceful retreat.
+      </p>
+    </section>
+
+    
+    <h2>Branch Summary</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Branch Name</th>
+          <th>Location</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mountain Peak Retreat</td>
+          <td>Pidurutalagala</td>
+          <td><img src="assests/images/branch1.jpg" width="300" alt="Branch 1 Image"></td>
+        </tr>
+        <tr>
+          <td>Mountain Peak Lodge</td>
+          <td>Knuckles</td>
+          <td><img src="assests/images/branch2.jpg" width="300" alt="Branch 2 Image"></td>
+        </tr>
+        <tr>
+          <td>Mountain Inn</td>
+          <td>Kirigalpotha</td>
+          <td><img src="assests/images/branch3.jpg" width="300" alt="Branch 3 Image"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <ul>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">Terms of Service</a></li>
+            <li><a href="">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul class="social-media">
+            <li><a href="https://www.facebook.com/CinnamonRedColombo/"><img src="https://img.icons8.com/color/48/000000/facebook.png"></a></li>
+            <li><a href="https://www.facebook.com/CinnamonRedColombo/"><img src="https://img.icons8.com/color/48/000000/twitter.png"></a></li>
+            <li><a href="https://www.facebook.com/CinnamonRedColombo/"><img src="https://img.icons8.com/color/48/000000/instagram.png"></a></li>
+            <li><a href="https://www.facebook.com/CinnamonRedColombo/"><img src="https://img.icons8.com/color/48/000000/youtube.png"></a></li>
+          </ul>
+        </div>
+        <div class="column">
+          <p>Copyright &copy; 2023 Mountain Peak Hotel</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assests/js/script.js"></script>
+</body>
+
+</html>
