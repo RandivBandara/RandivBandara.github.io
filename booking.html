@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking</title>
+    <link rel="stylesheet" href="assests/css/global.css" />
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <div x-data="hotel_app">
+      <nav class="navbar" id="navbar">
+        <div>
+          <a href="index.html"
+            ><img src="assests/images/logo.png" class="logo" alt="hotel"
+          /></a>
+        </div>
+        <ul id="navigationUl">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="branches.html">Branches</a></li>
+          <li class="dropdown">
+            <a href="restaurants.html" class="dropbtn">Restaurants</a>
+            <div class="dropdown-content">
+              <a href="eventOne.html">Events-corporate</a>
+              <a href="eventTwo.html">Events-weddings</a>
+            </div>
+          </li>
+          <li><a href="adventures.html">Adventures</a></li>
+          <li><a href="booking.html" class="active">Booking</a></li>
+        </ul>
+        <div id="bookingButton" class="booking-button">
+          <a href="booking.html">Booking</a>
+        </div>
+        <div
+          id="navCloseButton"
+          class="nav-close-button"
+          onclick="closeNavbar();"
+        >
+          X
+        </div>
+        <div id="navOpenButton" class="nav-open-button" onclick="openNavbar();">
+          |||
+        </div>
+      </nav>
+      <div class="hero"></div>
+
+      <div class="tab-container">
+        <div class="tab-container">
+          <ul class="tabs">
+            <li class="tab" onclick="openTab('booking')">Booking</li>
+            <li class="tab" onclick="openTab('checkout')">Checkout</li>
+            <li
+              class="tab"
+              x-on:click="loadFavoriteToUI()"
+              onclick="openTab('favourite')"
+            >
+              Favourite
+            </li>
+            <li
+              x-on:click="loadBookingsToUI()"
+              class="tab"
+              onclick="openTab('history')"
+            >
+              History
+            </li>
+          </ul>
+
+          <!-- *******************************************Room Booking***************************************************************************** -->
+          <div id="booking" class="tab-content" style="display: block">
+            <section class="booking-form">
+              <h2>Book a Hotel Room</h2>
+
+              <div>
+                <label for="room-type">Choose Room Type:</label>
+
+                <select
+                  x-model="room_booking.roomtype"
+                  name="room-type"
+                  id="room-type"
+                >
+                  <option value="0">Select Room</option>
+                  <option value="single">Single</option>
+                  <option value="double">Double</option>
+                  <option value="triple">Triple</option>
+                </select>
+
+                <label for="check-in">Check in Date:</label>
+                <input
+                  type="date"
+                  x-model="room_booking.checkin_date"
+                  class="check-in-date"
+                  id="check-in-date"
+                  required
+                />
+
+                <label for="check-out">Check out Date:</label>
+                <input
+                  type="date"
+                  x-model="room_booking.checkout_date"
+                  class="check-out-date"
+                  id="check-out-date"
+                  required
+                />
+
+                <label for="num-rooms">Number of Rooms:</label>
+                <input
+                  type="number"
+                  x-model="room_booking.num_of_rooms"
+                  class="num-rooms"
+                  id="num-rooms"
+                  min="1"
+                  required
+                />
+
+                <label for="num-adults">Number of Adults:</label>
+                <input
+                  type="number"
+                  x-model="room_booking.num_of_adults"
+                  name="num-adults"
+                  id="num-adults"
+                  min="1"
+                  required
+                />
+
+                <label for="num-children">Number of Children:</label>
+                <input
+                  type="number"
+                  x-model="room_booking.num_of_children"
+                  name="num-children"
+                  id="num-children"
+                  min="0"
+                  required
+                />
+
+                <label for="duration">Duration of Stay (in days):</label>
+                <input
+                  type="number"
+                  x-model="room_booking.duration_of_stay"
+                  name="duration"
+                  id="duration"
+                  min="1"
+                  required
+                />
+                <p
+                  x-text="stay_duration > 0 ? 'Stay Duration: ' + stay_duration + ' days' : ''"
+                ></p>
+
+                <label for="extra-requirements">Extra Requirements:</label>
+                <textarea
+                  x-model="room_booking.extra_requirements"
+                  name="extra-requirements"
+                  id="extra-requirements"
+                  rows="4"
+                ></textarea>
+
+                <button x-on:click="room_book()">Book Now</button>
+              </div>
+            </section>
+            <!-- *******************************************Adventure Booking***************************************************************************** -->
+            <section class="booking-form">
+              <h2>Book an Adventure</h2>
+
+              <div>
+                <label
+                  x-model="adventure_booking.adventure_type"
+                  for="adventure-type"
+                  >Choose Adventure:</label
+                >
+
+                <select
+                  x-model="adventure_booking.adventure_type"
+                  name="adventure-type"
+                  id="adventure-type"
+                >
+                  <option value="0">Select an Adventure</option>
+                  <option value="rafting">White Water Rafting</option>
+                  <option value="gliding">Paragliding</option>
+                  <option value="Hiking">Hiking</option>
+                </select>
+
+                <label for="num-adults">Number of Adults(Local):</label>
+                <input
+                  type="number"
+                  x-model="adventure_booking.num_of_adults_local"
+                  name="num-adults"
+                  id="num-adults"
+                  min="1"
+                  required
+                />
+
+                <label for="num-children">Number of Children(local):</label>
+                <input
+                  type="number"
+                  x-model="adventure_booking.num_of_children_local"
+                  name="num-children"
+                  id="num-children"
+                  min="0"
+                  required
+                />
+
+                <label for="num-adults">Number of Adults(foreign):</label>
+                <input
+                  type="number"
+                  x-model="adventure_booking.num_of_adults_foreign"
+                  name="num-adults"
+                  id="num-adults"
+                  min="1"
+                  required
+                />
+
+                <label for="num-children">Number of Children(foreign):</label>
+                <input
+                  type="number"
+                  x-model="adventure_booking.num_of_children_foreign"
+                  name="num-children"
+                  id="num-children"
+                  min="0"
+                  required
+                />
+
+                <label for="add-guide">Add a Guide:</label>
+                <input
+                  x-model="adventure_booking.add_guide"
+                  type="checkbox"
+                  name="add-guide"
+                  id="add-guide"
+                />
+
+                <button x-on:click="adventure_book()">Book Now</button>
+              </div>
+            </section>
+          </div>
+
+          <div id="checkout" class="tab-content" style="display: none">
+            <div class="booking-container">
+              <h1>Booking Page</h1>
+
+              <!-- ********************************************Summary***************************************** -->
+
+              <div class="booking-container">
+                <h2>Summary</h2>
+
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Description</th>
+                      <th scope="col">Cost</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Room Cost</td>
+                      <td>
+                        LKR <span x-text="room_booking.roomTotal"></span>.00
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Adventure Cost</td>
+                      <td>
+                        LKR <span x-text="total_adventure_price"></span>.00
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Total Cost</td>
+                      <td>LKR <span x-text="total_cost"></span>.00</td>
+                    </tr>
+                    <tr>
+                      <td>Total Discount</td>
+                      <td>
+                        LKR
+                        <span x-text="room_booking.total_discount"></span>.00
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Final Total</td>
+                      <td>LKR <span x-text="final_total"></span>.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!-- ****************************************CheckOut***************************************************************** -->
+
+                <section class="checkout">
+                  <h2>Checkout</h2>
+
+                  <div>
+                    <p>
+                      You have <span x-text="loyality_points"></span> loyality
+                      points
+                    </p>
+
+                    <label for="promo-code">Promo Code:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.promo_code"
+                      name="promo-code"
+                      id="promo-code"
+                    />
+
+                    <label for="full-name">Full Name:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.full_name"
+                      name="full-name"
+                      id="full-name"
+                      required
+                    />
+
+                    <label for="email">Email:</label>
+                    <input
+                      type="email"
+                      x-model="checkout_booking.email"
+                      name="email"
+                      id="email"
+                      required
+                    />
+
+                    <label for="phone">Phone Number:</label>
+                    <input
+                      type="tel"
+                      x-model="checkout_booking.mobile"
+                      name="mobile"
+                      id="mobile"
+                      required
+                    />
+
+                    <label for="address">Address:</label>
+                    <textarea
+                      x-model="checkout_booking.address"
+                      name="address"
+                      id="address"
+                      rows="4"
+                      required
+                    ></textarea>
+
+                    <label for="city">City:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.city"
+                      name="city"
+                      id="city"
+                      required
+                    />
+
+                    <label for="country">Country:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.country"
+                      name="country"
+                      id="country"
+                      required
+                    />
+
+                    <label for="postal-code">Postal Code:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.postal_code"
+                      name="postal-code"
+                      id="postal-code"
+                      required
+                    />
+
+                    <label for="card-number">Card Number:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.card_number"
+                      name="card-number"
+                      id="card-number"
+                      required
+                    />
+
+                    <label for="card-holder">Card Holder:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.card_holder"
+                      name="card-holder"
+                      id="card-holder"
+                      required
+                    />
+
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input
+                      type="text"
+                      x-model="checkout_booking.expiry_date"
+                      name="expiry-date"
+                      id="expiry-date"
+                      required
+                    />
+
+                    <button onclick="addFavorite()">Confirm Booking</button>
+                    <button x-on:click="addFavorite()">
+                      Save to Favorites
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div id="favourite" class="tab-content" style="display: none">
+            <h2>Favorite Bookings</h2>
+            <ul id="favoriteList">
+              <!-- <template x-for="booking in favoriteBookings" :key="booking.id">
+                <li>
+                  <p
+                    x-text="booking.roomtype ? `Room Booking: ${booking.roomtype}` : ''"
+                  ></p>
+                  <p
+                    x-text="booking.adventure_type ? `Adventure Booking: ${booking.adventure_type}` : ''"
+                  ></p>
+                </li>
+              </template> -->
+            </ul>
+          </div>
+
+          <div
+            x-on:tab-open="printBookings()"
+            id="history"
+            class="tab-content"
+            style="display: none"
+          >
+            <h2>Booking History</h2>
+            <ul id="bookingList"></ul>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="column">
+              <ul>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <ul class="social-media">
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    ><img
+                      src="https://img.icons8.com/color/48/000000/facebook.png"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    ><img
+                      src="https://img.icons8.com/color/48/000000/twitter.png"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    ><img
+                      src="https://img.icons8.com/color/48/000000/instagram.png"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/CinnamonRedColombo/"
+                    ><img
+                      src="https://img.icons8.com/color/48/000000/youtube.png"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="column">
+              <p>Copyright &copy; 2023 Mountain Peak Hotel</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="assests/js/process.js"></script>
+    <script src="assests/js/script.js"></script>
+  </body>
+</html>
