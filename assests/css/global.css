@@ -789,3 +789,30 @@ ul li a {
   border-radius: 5px;
   cursor: pointer;
 }
+
+/* Styling for the history and favourite list */
+#bookingList,
+#favoriteList {
+  list-style: none;
+  padding: 0;
+}
+
+#bookingList li,
+#favoriteList li {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+/* Additional styles for the favorite list */
+#favoriteList li {
+  background-color: #e0f7fa;
+}
+
+/* Styling for the booking details */
+#bookingList span,
+#favoriteList span {
+  display: inline-block;
+  margin-right: 10px;
+}
